@@ -1,0 +1,21 @@
+@if(data$ | async; as n){
+<div style="display: flex;flex-direction: row-reverse;height:100%">
+    <div class="header">
+        <header>
+            <span>
+                <img src="SoftLogo.png" />
+            </span>
+            <div>
+                <h3 class="CompanyName">Vaishnav Solution</h3>
+                <span (click)="menuToggle()">&#9776;</span>
+            </div>
+
+        </header>
+        <router-outlet></router-outlet>
+    </div>
+
+    <app-menus></app-menus>
+</div>
+}@else {
+<router-outlet></router-outlet>
+}

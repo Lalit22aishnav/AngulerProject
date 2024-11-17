@@ -1,0 +1,48 @@
+<section style="display: flex;justify-content: center;height:calc(100% - 85px);align-items: center;gap:20px">
+    <div class="login-container">
+      <h2>State Form</h2>
+      <form [formGroup]="stateForm">
+        <div>
+          <input type="text" placeholder="State Code"  formControlName="stateCode" >
+          <div *ngIf="stateForm.get('stateCode')?.invalid && stateForm.get('stateCode')?.touched">
+            <small *ngIf="stateForm.get('stateCode')?.errors?.['required']">State Code is required.</small>
+            <small *ngIf="stateForm.get('stateCode')?.errors?.['minlength']">Password must be at least {{stateFieldProperty["stateCodeMinlen"]}}
+              characters.</small>
+          </div>
+        </div>
+        <br>
+        <div>
+          <input type="text" placeholder="State Name" formControlName="stateName" >
+          <div *ngIf="stateForm.get('stateName')?.invalid && stateForm.get('stateName')?.touched">
+            <small *ngIf="stateForm.get('stateName')?.errors?.['required']">State Name is required.</small>
+            <small *ngIf="stateForm.get('stateName')?.errors?.['minlength']">Password must be at least {{stateFieldProperty["stateNameMinlen"]}}
+              characters.</small>
+          </div>
+        </div>
+        <br>
+        <div><button type="submit" class="login-button" (click)="stateSave()">{{(AddEdit)?"Edit":"Submit"}}
+        </button></div>
+      </form>
+    </div>
+    <div class="flex-table">
+      <div class="flex-table-row header">
+        <div class="flex-table-cell">RowIndex</div>
+        <div class="flex-table-cell">State Code</div>
+        <div class="flex-table-cell">State Name</div>
+        <div class="flex-table-cell">Action</div>
+      </div>
+      @for (item of stateObj; track $index) {
+        <div class="flex-table-row">
+          <div class="flex-table-cell">{{$index + 1}}</div>
+          <div class="flex-table-cell">{{item["StateCode"]}}</div>
+          <div class="flex-table-cell">{{item["StateName"]}}</div>
+          <div class="flex-table-cell" style="display: flex;justify-content: space-between;">
+            <button class="btn" (click)="stateEdit(item)">Edit</button>
+            <button class="btn" (click)="stateDelete(item)">Delete</button>
+          </div>
+        </div>
+      }
+    </div>  
+
+    
+    </section>

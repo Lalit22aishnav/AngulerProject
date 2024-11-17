@@ -1,0 +1,31 @@
+<section style="display: flex;justify-content: center;height: 100%;align-items: center;">
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm">
+    <div>
+      <input type="text" placeholder="Email"  aria-describedby="email" formControlName="email" name="email">
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        <small *ngIf="loginForm.get('email')?.errors?.['required']">email is required.</small>
+        <small *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</small> <br>
+        <small *ngIf="loginForm.get('email')?.errors?.['pattern']">Please enter a valid email address.</small>
+      </div>
+    </div>
+    <br>
+    <div>
+      <input type="password" placeholder="Password" formControlName="password" name="password">
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+        <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least {{passwordLength}}
+          characters.</small>
+      </div>
+    </div>
+    <br>
+    <div><button type="submit" class="login-button" (click)="onSubmit()">Submit</button></div>
+    
+  </form>
+  <br>
+  @if(errorMessage){
+    <p style="color:red">Error :{{errorMessage}}</p>
+  }
+</div>
+</section>

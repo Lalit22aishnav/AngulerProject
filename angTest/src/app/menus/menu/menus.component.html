@@ -1,0 +1,10 @@
+<nav class="navMenu " [class.toggleMenu]="(data$ | async)?.isOpen">
+  <ul >
+    <li *ngFor="let menu of finalMenu">
+      <app-child-menu [menu]="menu"></app-child-menu>
+    </li>
+  </ul>
+  <div style="display: flex;justify-content: center;">
+    <button type="button" class="btn" (click)="logout()">Logout</button>
+  </div>
+</nav>

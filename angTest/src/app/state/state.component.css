@@ -1,0 +1,118 @@
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: beige;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 30px);
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #357ab8;
+}
+
+.forgot-password {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.forgot-password a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.flex-table-row {
+  display: flex;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.flex-table-row:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.flex-table-row.header {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.flex-table-cell {
+  flex: 1;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.flex-table-cell:first-child {
+  border-right: 1px solid #ddd;
+}
+
+.flex-table-cell:last-child {
+  border-left: 1px solid #ddd;
+}
+
+.flex-table-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn{
+  padding: 0px 10px;  
+}

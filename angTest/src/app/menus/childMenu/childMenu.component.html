@@ -1,0 +1,14 @@
+<ng-container>
+  <a [routerLink]="menu.routerLink" *ngIf="menu.routerLink" (click)="closeMenu(menu)">{{ menu.menuName }}</a>
+  <div *ngIf="!menu.routerLink" (click)="menuOpenClose(menu)" style="display: flex; justify-content: space-between;">
+    <span>{{ menu.menuName }}</span>
+    <span *ngIf="menu.hasChild" class="toggle-icon">{{ menu.isOpen ? '-' : '+' }}</span>
+  </div>  
+  
+  <!-- Render child menu items recursively -->
+  <ul *ngIf="menu.childMenu && menu.childMenu.length > 0" [class.open]= "menu.isOpen" class="menu_item_openClose">
+    <li *ngFor="let child of menu.childMenu">
+      <app-child-menu [menu]="child"></app-child-menu>
+    </li>
+  </ul>
+</ng-container>

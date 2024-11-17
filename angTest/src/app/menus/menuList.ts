@@ -1,0 +1,44 @@
+export const menuList = [
+    {
+      menuId:1,
+      menuName:"DashBoard",
+      routerLink:"/dashboard",
+      hasChild:true,
+      parentMenuId:0
+    },
+    {
+      menuId:2,
+      menuName:"General",
+      routerLink:"",
+      hasChild:true,
+      parentMenuId:0
+    },
+    {
+      menuId:3,
+      menuName:"State",
+      routerLink:"/state",
+      hasChild:true,
+      parentMenuId:2
+    },
+    {
+      menuId:4,
+      menuName:"Subscriber",
+      routerLink:"",
+      hasChild:true,
+      parentMenuId:0
+    },
+    {
+      menuId:5,
+      menuName:"Single Subscriber",
+      routerLink:"/singleSubscriber",
+      hasChild:false,
+      parentMenuId:4
+    },
+    {
+      menuId:6,
+      menuName:"Bulk Subscriber",
+      routerLink:"/bulkSubscriber",
+      hasChild:false,
+      parentMenuId:4
+    },
+  ];
